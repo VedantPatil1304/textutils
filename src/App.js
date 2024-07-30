@@ -1,12 +1,12 @@
 //Whatever is there in this code will be resolved and shown in our ux 
 
 import './App.css';
-import About from './components/About';
+// import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import React,{useState} from 'react';
 // import Alert from './Alert';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+// import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   const[mode,setmode]=useState('light')
@@ -62,22 +62,34 @@ function App() {
     }
   }
 
-  return (
+  //this code was for router
+  // return (
+  //   <>
+  //     <BrowserRouter>
+  //     <Navbar title=" Vedant's Textutills" textAbout="About textutills" mode={mode} togglemode={togglemode} redtogglemode={redtogglemode} bluetogglemode={bluetogglemode}/>
+  //     {/* <Alert alert={alert}/>  */}
+  //       <div className="container my-4" mode={mode}>
+  //         <Routes>
+  //           <Route  exact path="/about" element={<About />}></Route>  {/*we use exact to go to the exact component , it is not a mandatory syntax*/}
+  //           </Routes>
+  //           <Routes>
+  //          <Route exact path="/" element={<TextForm   heading="Enter Text to analyze " mode={mode} />
+  //             }
+  //           ></Route>
+  //         </Routes>
+  //       </div>
+  //     </BrowserRouter>
+  //   </>
+  // );
+  return(
     <>
-      <BrowserRouter>
-      <Navbar title=" Vedant's Textutills" textAbout="About textutills" mode={mode} togglemode={togglemode} redtogglemode={redtogglemode} bluetogglemode={bluetogglemode}/>
+    <Navbar title=" Vedant's Textutills" textAbout="About textutills" mode={mode} togglemode={togglemode} redtogglemode={redtogglemode} bluetogglemode={bluetogglemode}/>
       {/* <Alert alert={alert}/>  */}
-        <div className="container my-4" mode={mode}>
-          <Routes>
-            <Route  exact path="/about" element={<About />}></Route>  {/*we use exact to go to the exact component , it is not a mandatory syntax*/}
-            </Routes>
-            <Routes>
-           <Route exact path="/" element={<TextForm   heading="Enter Text to analyze " mode={mode} />
-              }
-            ></Route>
-          </Routes>
-        </div>
-      </BrowserRouter>
+      <div className="container my-4" mode={mode}>
+      {/* <About /> */}
+      <TextForm   heading="Enter Text to analyze " mode={mode} />
+      </div>
+
     </>
   );
 }
